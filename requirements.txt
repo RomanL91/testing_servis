@@ -1,0 +1,13 @@
+asgiref==3.5.2; python_version >= "3.8"
+autopep8==2.0.1; python_version >= "3.6"
+backports.zoneinfo==0.2.1; python_version < "3.9" and python_version >= "3.8"
+django-crispy-forms==1.14.0; python_version >= "3.7"
+django-json-widget==1.1.1
+django==4.1.4; python_version >= "3.8"
+future==0.18.2; python_version >= "2.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0"
+gunicorn==20.1.0; python_version >= "3.5"
+pycodestyle==2.10.0; python_version >= "3.6"
+south==1.0.2
+sqlparse==0.4.3; python_version >= "3.8"
+tomli==2.0.1; python_version < "3.11" and python_version >= "3.7"
+tzdata==2022.7; sys_platform == "win32" and python_version >= "3.8"

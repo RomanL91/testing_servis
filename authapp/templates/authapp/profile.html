@@ -1,0 +1,51 @@
+{% extends "testapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<title>Profile</title>
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+    {% for el in data.values %}
+      {% if el.all_test_questions %}
+        <div class="content-section">
+          <div class="media">
+            <!-- <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"> -->
+            <div class="media-body">
+              <h2 class="account-heading">категория теста: {{ el.cat_test }}</h2>
+              <h6>сколько вопросов: {{ el.all_test_questions }}</h6>
+              <h6>правильных ответов: {{ el.correct_answers_given }}</h6>
+              <h6>ошибок: {{ el.wrong_answers_given }}</h6>
+              <h6>процент правильных ответов: {{ el.percentage_correct_answers }}%</h6>
+              <a href="#">детали</a>
+              <br>
+              <a href="">удалить</a>
+              <!-- <p class="text-secondary">{{ user.email }}</p> -->
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="content-section">
+          <div class="media">
+            <!-- <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"> -->
+            <div class="media-body">
+              <h2 class="account-heading">категория теста: {{ el.cat_test }}</h2>
+              <font color="red">
+                <p>тест не завершен</p>
+              </font>
+              <!-- <h6>тест не завершен</h6> -->
+              <a href="#">продолжить</a>
+              <br>
+              <a href="#">удалить</a>
+              <!-- <p class="text-secondary">{{ user.email }}</p> -->
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+{% endblock content %}

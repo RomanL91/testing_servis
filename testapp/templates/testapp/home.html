@@ -1,0 +1,16 @@
+{% extends "testapp/base.html" %}
+{% block content %}
+  <title>Main</title>
+    {% for category in categorys %}
+        <article class="media content-section">
+          <div class="media-body">
+            {% if user.is_authenticated %}
+                <h2><a class="article-title" href="{% url 'testapp:testing' category.pk %}">{{ category.title }}</a></h2>
+            {% else %}
+                <h2><a class="article-title">{{ category.title }}</a></h2>
+            {% endif %}
+            <p class="article-content">{{ category.description }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

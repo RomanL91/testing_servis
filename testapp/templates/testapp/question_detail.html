@@ -1,0 +1,17 @@
+{% extends "testapp/base.html" %}
+
+    {% block content %}
+    <title>Question</title>
+    <h1>Вопрос № {{ question.pk }}</h1>
+    ==================================
+    <h3>Вопрос: <br><h5>{{ question.question }}</h5></h3>
+
+    <br>
+    <br>
+
+    <form autocomplete="off" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="OK">
+    </form>
+    {% endblock content %}

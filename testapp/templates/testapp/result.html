@@ -1,0 +1,18 @@
+{% extends "testapp/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<title>Result</title>
+    <div class="content-section">
+      <div class="media">
+        <!-- <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"> -->
+        <div class="media-body">
+          <h2 class="account-heading">Пользователь: {{ user.username }}</h2>
+          <p class="text-secondary">Категория теста: {{ cat_test }}</p>
+          <p class="text-secondary">Всего вопросов: {{ all_test_questions }}</p>
+          <p class="text-secondary">Правильных ответов: {{correct_answers_given }}</p>
+          <p class="text-secondary">Не правильных ответов: {{ wrong_answers_given }}</p>
+          <p class="text-secondary">Процент(%): {{ percentage_correct_answers }}%</p>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
