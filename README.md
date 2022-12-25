@@ -28,10 +28,11 @@
 (los: admin, pass: admin), а так же набор тестов из 4 вопросов.
 
 Для запуска:
-    sudo docker-compose build
-    sudo docker-compose up
+- sudo docker-compose build
+- sudo docker-compose up
 
-В браузере перейти на localhost(туда настроена раздача статики)
+В браузере перейти на 
+- localhost(туда настроена раздача статики)
 
 
 ### Требования
